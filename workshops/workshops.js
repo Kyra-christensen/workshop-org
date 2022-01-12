@@ -47,7 +47,7 @@ async function displayWorkshops() {
             participantsEl.append(participantEl);
         }   
     // append the participantsEl and nameEl to the workshopEl   
-        workshopEl.append(participantsEl, nameEl);
+        workshopEl.append(nameEl, participantsEl);
     // append the workshopEl to the workshopsEl
         workshopsEl.append(workshopEl);
     }   
