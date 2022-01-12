@@ -17,12 +17,12 @@ export async function getWorkshop() {
     return checkError(response);
 }
 
-export async function deletParticipant(id) {
+export async function deleteParticipant(id) {
     const response = await client
         .from('workshop_participant')
         .delete()
-        .match({ id: id })
-        .single();
+        .match({ id: id });
+        
     return checkError(response);
 }
 
