@@ -13,13 +13,12 @@ form.addEventListener('submit', async(e) => {
 
     const data = new FormData(form);
     const name = data.get('participant-name');
-    const contact_info = data.get('contact_info');
+    
     const workshop_id = data.get('workshop_id');
 
     await createParticipant({
-        name,
-        contact_info,
-        workshop_id
+        name: name,
+        workshop_id: workshop_id
     });
     form.reset();
 });
@@ -30,6 +29,7 @@ window.addEventListener('load', async() => {
     const select = document.querySelector('select');
     // go get the workshops from supabase
     const workshops = await getWorkshop();
+    console.log(workshops);
     // for each workshop
     for (let workshop of workshops){
         // create an option tag  
